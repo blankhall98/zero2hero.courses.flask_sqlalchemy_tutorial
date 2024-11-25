@@ -1,0 +1,24 @@
+{%extends 'base.html'%}
+
+{%block title%}show items{%endblock%}
+
+{%block content%}
+
+<div class="container">
+    <h3>Item Information</h3>
+    <p>Username: {{user_info.username}}</p>
+    <div class="conatainer">
+        <p>Items</p>
+        <ul>
+            {%for item in items%}
+            <li>
+                <p>Name: {{item.name}}</p>
+                <p>Description: {{item.description}}</p>
+                <p>User ID: {{item.user_id}}</p>
+            </li>
+            {%endfor%}
+        </ul>
+    </div>
+</div>
+
+{%endblock%}

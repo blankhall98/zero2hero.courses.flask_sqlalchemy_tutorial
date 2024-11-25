@@ -1,0 +1,73 @@
+{%extends 'base.html'%}
+
+{%block title%}home{%endblock%}
+
+{%block content%}
+
+<div class="container">
+    <h3>Index Page</h3>
+    <p>Actions</p>
+    <ul>
+        <li><a href="{{url_for('main.create_user')}}">Create User</a></li>
+        <li><a href="{{url_for('main.get_users')}}">Read Users</a></li>
+        <li>Read User by ID</li>
+        <div class="container">
+            <form action="{{url_for('main.get_user_by_id')}}" method="POST">
+                <input type="text" name="id" placeholder="id" required>
+                <button type="submit">Read</button>
+            </form>
+        </div>
+        <li>Read User by Username</li>
+        <div class="container">
+            <form action="{{url_for('main.get_user_by_username')}}" method="POST">
+                <input type="text" name="username" placeholder="username" required>
+                <button type="submit">Read</button>
+            </form>
+        </div>
+        <li>Update User by ID</li>
+        <div class="container">
+            <form action="{{url_for('main.update_user_by_id')}}" method="POST">
+                <input type="text" name="id" placeholder="id" required>
+                <input type="text" name="new_username" placeholder="new username" required>
+                <input type="text" name="new_password" placeholder="new password" required>
+                <input type="text" name="new_email" placeholder="new email" required>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+        <li>Update User by Username</li>
+        <div class="container">
+            <form action="{{url_for('main.update_user_by_username')}}" method="POST">
+                <input type="text" name="username" placeholder="username" required>
+                <input type="text" name="new_username" placeholder="new username" required>
+                <input type="text" name="new_password" placeholder="new password" required>
+                <input type="text" name="new_email" placeholder="new email" required>
+                <button type="submit">Update</button>
+            </form>
+        </div>
+        <li>Delete User by ID</li>
+        <div class="container">
+            <form action="{{url_for('main.delete_user_by_id')}}" method="POST">
+                <input type="text" name="id" placeholder="id" required>
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+        <li>Delete User by Username</li>
+        <div class="container">
+            <form action="{{url_for('main.delete_user_by_username')}}" method="POST">
+                <input type="text" name="username" placeholder="username" required>
+                <button type="submit">Delete</button>
+            </form>
+        </div>
+        <li><a href="{{url_for('main.validate_user')}}">Validate User</a></li>
+        <li><a href="{{url_for('main.create_item')}}">Create Item</a></li>
+        <li>Get items by user ID</li>
+        <div class="container">
+            <form action="{{url_for('main.get_items_by_user_id')}}" method="POST">
+                <input type="text" name="user_id" placeholder="user id" required>
+                <button type="submit">GET</button>
+            </form>
+        </div>
+    </ul>
+</div>
+
+{%endblock%}

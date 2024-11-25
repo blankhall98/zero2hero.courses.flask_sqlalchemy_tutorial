@@ -1,0 +1,10 @@
+{%extends 'base.html'%}
+{%block title%}users{%endblock%}
+
+{%block content%}
+
+{%for user in users%}
+<p>{{user.id}} - {{user.username}} - {{user.password}}</p>
+{%endfor%}
+
+{%endblock%}
